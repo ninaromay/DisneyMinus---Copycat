@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  // mongo: 'http://localhost:3005',
+  mongo: 'https://fluffy-disney-minus.herokuapp.com'
+
 };
 
 /*

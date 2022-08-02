@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -315,10 +316,6 @@ export class DisneyBbddService {
 
   ];
 
-
-
-
-
   public nav_menus : any = [
     {id: 0, title: "HOME",      icon: "", svg: ""},
     {id: 1, title: "SEARCH",    icon: "", svg: ""},
@@ -331,40 +328,41 @@ export class DisneyBbddService {
 
   constructor(public http : HttpClient) { }
 
+  public url : string = environment.mongo
 
   getDisney_bbdd() : any {
-     return this.http.get<any>('http://localhost:3005')
+     return this.http.get<any>(this.url)
   }
 
   getDisney_movies() : any {
-    return this.http.get<any>('http://localhost:3005/movies')
+    return this.http.get<any>(this.url+'/movies')
   }
   getDisney_moviesById(id : number) : any {
-    return this.http.get<any>('http://localhost:3005/movies/id/' + id)
+    return this.http.get<any>(this.url+'/movies/id/'+ id)
   }
   getDisney_moviesByName(url : string) : any {
-    return this.http.get<any>('http://localhost:3005/movies/' + url)
+    return this.http.get<any>(this.url+'/movies/'+ url)
   }
 
   getDisney_series() : any {
-    return this.http.get<any>('http://localhost:3005/series')
+    return this.http.get<any>(this.url+'/series')
   }
   getDisney_seriesById(id: number) : any {
-    return this.http.get<any>('http://localhost:3005/series/id/' + id)
+    return this.http.get<any>(this.url+'/series/id/'+ id)
   }
   getDisney_seriesByName(url : string) : any {
-    return this.http.get<any>('http://localhost:3005/series/' + url)
+    return this.http.get<any>(this.url+'/series/'+ url)
   }
 
   getDisney_originals() : any {
-    return this.http.get<any>('http://localhost:3005/originals')
+    return this.http.get<any>(this.url+'/originals')
   }
 
   getMenus() : any {
-    return this.http.get<any>('http://localhost:3005/menus')
+    return this.http.get<any>(this.url+'/menus')
   }
 
   getMain_slider() : any{
-    return this.http.get<any>('http://localhost:3005/main')
+    return this.http.get<any>(this.url+'/main')
   }
 }
