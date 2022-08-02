@@ -1,0 +1,130 @@
+<div class="main">
+
+  <div class="view" *ngIf=" loading ">
+
+      <img class="view__background" [src]="view.img.background" alt="scale">
+
+      <div class="view__info info">
+          <div class="info__top">
+              <img [src]="view.img.logo" alt="logo" class="info__logo">
+              <div class="info__icons">
+                  <div class="info__data">
+                      <img [src]="view.rating" alt="6" class="info__rating">
+                      <img *ngIf="view.ad " src="/assets/icons/ad.png" alt="ad" class="info__ad">
+                      <img src="/assets/icons/cc.png" alt="cc" class="info__cc">
+                      <div class="info__time">
+                          <span class="info__release_date">{{view.release_date}}</span>
+                          <div class="info__dot"></div>
+                          <span class="info__duration">{{view.duration}}</span>
+                      </div>
+                  </div>
+                  <p class="info__categories">{{view.genre}}</p>
+              </div>
+
+          </div>
+          <div class="info__bottom">
+              <div class="info__btns">
+                  <button class="info__play">
+                      <img src="/assets/icons/play.svg" alt="" class="svg__play">
+                      <span>Play</span>
+                  </button>
+                  <div class="btns__media">
+                      <button class="info__add">
+                          <img *ngIf="view.add === false" src="/assets/icons/plus_white.svg" alt="" class="svg__add">
+                          <span *ngIf="view_phone">Watchlist</span>
+                      </button>
+                      <button class="info__group">
+                          <img src="/assets/icons/groupwatch.svg" alt="" class="svg__group">
+                          <span *ngIf="view_phone">GroupWatch</span>
+                      </button>
+                  </div>
+              </div>
+              <p *ngIf="!view_phone" class="info__short_description">{{view.description.short}}</p>
+              <p *ngIf="view_phone" class="info__short_description">{{view.description.short_phone}}</p>
+          </div>
+
+      </div>
+
+      <div class="view__lower tabs">
+          <div class="tabs__btns">
+              <button type="button" class="tabs__suggested" (click)="tabs = 0">
+                  <span>Suggested</span>
+              </button>
+              <button type="button" class="tabs__details"   (click)="tabs = 1">
+                  <span>Details</span>
+              </button>
+              <!-- <button class="extras"></button> -->
+          </div>
+          <div class="tabs__info">
+              <div *ngIf="tabs === 0" class="tabs__block_suggested">
+                  <app-slider-basic [slider_basic]=" slider_sug "
+                  [message] = "''"
+                  [lim]="5"></app-slider-basic>
+              </div>
+              <div *ngIf="tabs === 1" class="tabs__block_details details">
+                  <div class="details__title">
+                      {{view.title}}
+                  </div>
+                  <div class="details__bottom">
+                      <div class="details__text_block">
+                          <div class="details__text">
+                              {{view.description.complete}}
+                          </div>
+                          <div class="details__warning">
+                              {{view.description.warning}}
+                          </div>
+                      </div>
+                      <div class="details__specifics">
+                          <div class="details__specifics__left">
+                              <div class="details__duration">
+                                  Duration:
+                                  <span>{{view.duration}}</span>
+                              </div>
+                              <div class="details__release_date">
+                                  Release date:
+                                  <span>{{view.release_date}}</span>
+                              </div>
+                              <div class="details__genre">
+                                  Genre:
+                                  <span>{{view.genre}}</span>
+                              </div>
+                              <div class="details__rating">
+                                  Rating:
+                                  <img [src]="view.rating" alt="6" class="info__rating">
+                              </div>
+                              <div class="details__formats">
+                                  Available in the following formats:
+                                  <div class="details__formats_icons" >
+                                    <img *ngIf="view.ad " src="/assets/icons/ad.png" alt="ad" class="info__ad">
+                                    <img src="/assets/icons/cc.png" alt="cc" class="info__cc">
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="details__specifics_right">
+                              <div class="details__director">
+                                  <span *ngIf=" view.director !== '' " class="details__director_span">Director:</span>
+                                  <span *ngIf=" view.director !== '' " >{{view.director}}</span>
+                                  <span *ngIf=" view.creator  !== '' " class="details__creator_span">Creator:</span>
+                                  <span *ngIf=" view.creator  !== '' " >{{view.creator}}</span>
+                              </div>
+                              <div class="details__starring">
+                                  Starring:
+                                  <div class="details__starring_people">
+                                      <span>{{view.starring[0]}}</span>
+                                      <span>{{view.starring[1]}}</span>
+                                      <span>{{view.starring[2]}}</span>
+                                      <span>{{view.starring[3]}}</span>
+                                      <span>{{view.starring[4]}}</span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,16 @@
+<div class="mobile" >
+  <div class="mobile__logo logo">
+    <img class="logo__disney" src="/assets/icons/disney_plus_logo.png" alt="Disney -">
+  </div>
+</div>
+
+<main class="main">
+  <app-slider-main
+  [lim]="1"></app-slider-main>
+  <app-slider-menu></app-slider-menu>
+  <app-slider-basic
+  *ngFor="let slider of sliders"
+  [slider_basic]=" slider.data "
+  [lim]="5"
+  [message]="slider.message"> </app-slider-basic>
+</main>

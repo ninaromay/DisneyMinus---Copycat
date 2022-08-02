@@ -1,0 +1,12 @@
+<div class="menu">
+  <div *ngFor="let slider of slider_menus"
+  class="menu__slider">
+
+  <a [routerLink]="[slider.url]">
+    <img [src]=" slider.img_menu" alt="" class="menu__logo">
+    <div class="menu__video">
+      <video [src]=" slider.video "  type="video/mp4" loop muted autoplay></video>
+    </div>
+  </a>
+  </div>
+</div>

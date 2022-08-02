@@ -1,0 +1,43 @@
+<div class="search">
+  <form action="" method="post" #form="ngForm">
+    <input type="text" name="searching" class="search__input" pattern="[a-zA-Z0-9]"
+      #search="ngModel" [(ngModel)]="searching"
+      placeholder="Search by title, character, or genre">
+  </form>
+  <div *ngIf="searching !== '' " class="search__x">
+    <svg aria-hidden="true" aria-label="close" color="#f9f9f9" role="img" transform="" version="1.1" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" class="sc-bRBYWo jRcbmS"><title></title><path d="M17.9 16.239l8.833-9.085c.255-.266.629-.404 1.01-.404.248 0 .491.056.706.175.641.338.817 1.121.301 1.649l-9.081 9.342 9.08 9.312c.517.53.343 1.311-.313 1.657-.546.287-1.276.2-1.7-.231l-8.835-9.062-8.838 9.064c-.421.428-1.152.516-1.699.229-.655-.346-.829-1.127-.312-1.657l9.08-9.312-9.08-9.341c-.516-.529-.34-1.312.313-1.657.202-.112.445-.168.693-.168.382 0 .755.138 1.007.4l8.836 9.089z" class="sc-Rmtcm boiyVn"></path></svg>
+  </div>
+</div>
+
+
+<div class="collections" *ngIf=" searching === '' " >
+  <h3 class="collections__h3">Explore</h3>
+  <div class="collections__wrapper">
+    <div class="collections__card" *ngFor=" let collection of collections ">
+        <a href=""><img [src]="collection.src" [alt]="collection.alt" class="card"></a>
+    </div>
+  </div>
+</div>
+<div class="collections" *ngIf=" searching !== '' " >
+  <div class="collections__wrapper">
+    <div class="collections__card" *ngFor=" let result of slider_search  | filtro:searching ">
+      <div class="img__movie" *ngIf="result.series == false">
+        <a [routerLink]="['/movies/', result.url]"><img [src]="result.img.badging" [alt]="result.url" class="card"></a>
+      </div>
+      <div class="img__serie" *ngIf="result.series">
+        <a [routerLink]="['/series/', result.url]"><img [src]="result.img.badging" [alt]="result.url" class="card"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="collections" *ngIf=" search.dirty === false ">
+  <h3 *ngIf=" search.dirty === false " class="collections__h3">Explore</h3>
+  <div class="collections__wrapper">
+    <div class="collections__card" *ngFor="let collection of collections">
+        <a href=""><img [src]="collection.src" [alt]="collection.alt" class="card"></a>
+    </div>
+
+  </div>
+</div> -->

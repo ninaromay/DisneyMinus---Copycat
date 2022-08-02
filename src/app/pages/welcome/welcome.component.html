@@ -1,0 +1,15 @@
+<div class="welcome">
+  <div class="welcome__who">
+    <p>Who is watching?</p>
+  </div>
+  <div class="welcome__choose">
+    <div *ngFor="let profile of profiles" class="welcome__profiles">
+    <img [src]='profile.src' alt="" class="welcome__profile_img" [ngClass]="{'small': profile.id == 3}" >
+    <p>{{profile.name}}</p>
+    </div>
+  </div>
+
+</div>
+<div class="edit-btn">
+  <button>EDIT PROFILES</button>
+</div>

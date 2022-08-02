@@ -1,0 +1,27 @@
+
+.main{
+  width: 90%;
+  margin: 0 auto;
+
+  @media screen and (max-width: 480px){
+      width: calc(100% - 1.8em);
+  }
+}
+
+.mobile{
+  display: none;
+
+  @media screen and (max-width: 480px){
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 2em;
+
+    &__logo{
+      width: 10em;
+      margin: -0.8em 0 -2em 0;
+    }
+  }
+}
