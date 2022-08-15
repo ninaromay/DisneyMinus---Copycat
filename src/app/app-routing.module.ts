@@ -11,7 +11,7 @@ import { WishlistComponent } from './pages/wishlist/wishlist.component';
 
 const routes: Routes = [
   { path: 'home',         component: HomeComponent },
-  { path: '',             component: WelcomeComponent },
+  { path: '',             component: HomeComponent },
   { path: 'search',       component: SearchComponent },
   { path: 'watchlist',    component: WishlistComponent},
   { path: 'originals',    component: OriginalsComponent},
