@@ -28,9 +28,9 @@ I added video in the menu logos, which I hadn't used before.
 ## Project Preview
 Get a first look of the project
 
-![Img-01](https://github.com/ninaromay/Fakestagram/blob/main/public/home_capture.PNG?raw=true)
-![Img-02](https://github.com/ninaromay/Fakestagram/blob/main/public/profile_capture.PNG?raw=true)
-![Img-03](https://github.com/ninaromay/Fakestagram/blob/main/public/nav_capture.PNG?raw=true)
+![Img-01](https://raw.githubusercontent.com/ninaromay/DisneyMinus---Copycat/main/src/assets/disney-plus-movie-view.PNG)
+![Img-02](https://raw.githubusercontent.com/ninaromay/DisneyMinus---Copycat/main/src/assets/disney-plus-search.PNG)
+![Img-03](https://raw.githubusercontent.com/ninaromay/DisneyMinus---Copycat/main/src/assets/disney-plus-search-functional.PNG)
 
 ## Autor ✒️
 **Nina Romay**
