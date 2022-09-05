@@ -35,7 +35,7 @@ Get a first look of the project
 ## Autor ✒️
 **Nina Romay**
 
-* [Correo](micorreo@midominio.com)
+* [Correo](hello@ninaromay.com)
 * [LinkedIn](https://www.linkedin.com/in/ninaromayart/)
 * [Porfolio web](https://ninaromay.com/)
 
